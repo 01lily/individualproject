@@ -1,4 +1,4 @@
-const socket = io.connect("http://localhost:5001");
+const socket = io.connect("https://individualproject-otqe.onrender.com"); 
 
 let username = "";
 const secretKey = CryptoJS.enc.Utf8.parse("1234567890123456"); // Must match server key
