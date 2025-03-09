@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Chatroom</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="login-container">
+        <h2>Enter Chatroom</h2>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="joinChat()">Join</button>
+        <p id="error-message" class="error-message"></p>
+    </div>
+
+    <div id="chatroom-container" style="display: none;">
+        <h2>Chatroom</h2>
+        <div id="users-list"><strong>Users in Chat:</strong> <span id="user-count">0</span>/5</div>
+        <div id="chat-window"></div>
+        <input type="text" id="message" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="leaveChat()">Leave</button>
+    </div>
+</body>
+</html>
