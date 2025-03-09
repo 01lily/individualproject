@@ -6,9 +6,13 @@ from flask_cors import CORS
 from Crypto.Cipher import AES
 import base64
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", template_folder="templates")
 CORS(app, resources={r"/*": {"origins": "*"}})
 socketio = SocketIO(app, cors_allowed_origins="*")
+
+@app.route("/")
+def home():
+    return render_template("index.html")  # Serve index.html correctly
 
 connected_users = set()
 MAX_USERS = 5
